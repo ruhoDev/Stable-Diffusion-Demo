@@ -1,0 +1,13 @@
+conda create --name Stab_AI python=3.10
+conda activate Stab_AI
+
+change requirements/pt2.txt
+triton==2.0.0 => https://huggingface.co/r4ziel/xformers_pre_built/resolve/main/triton-2.0.0-cp310-cp310-win_amd64.whl
+
+pip install -r requirements/pt2.txt
+pip install .
+pip install -e git+https://github.com/Stability-AI/datapipelines.git@main#egg=sdata
+
+pip install diffusers --upgrade
+pip install git+https://github.com/huggingface/transformers
+conda install --name Stab_AI pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
